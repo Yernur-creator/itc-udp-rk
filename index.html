@@ -6,555 +6,21 @@
   <title>ИТЦ УДП РК</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #f0f2f5;
-      -webkint-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* TOPBAR */
-    .topbar {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 10px 48px;
-      background: #fff;
-      
-      font-size: 13px;
-      color: #333;
-    }
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .topbar-access {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      cursor: pointer;
-      background: #e8eaed;
-      padding: 7px 16px;
-      border-radius: 50px;
-    }
-    .lang {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .lang a {
-      text-decoration: none;
-      color: #555;
-      font-size: 13px;
-      font-weight: 500;
-    }
-    .lang a.active {
-      color: #1a1a2e;
-      font-weight: 700;
-    }
-    .lang svg {
-      color: #1e3a7a;
-    }
-    .lang span { color: #ccc; }
-
-    /* HERO */
-    .hero {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 60px 80px;
-      min-height: 420px;
-    }
-    .hero-left {
-      flex: 0 0 auto;
-      max-width: 480px;
-    }
-    .hero-logo {
-      width: 120px !important;
-      height: 120px !important;
-      margin-bottom: 18px;
-      mix-blend-mode: multiply;
-    }
-    .hero-title {
-      font-size: 42px;
-      font-weight: 900;
-      color: #1a1a2e;
-      line-height: 1.1;
-      margin-bottom: 16px;
-      letter-spacing: -0.3px;
-    }
-    .hero-desc {
-      font-size: 13px;
-      line-height: 1.7;
-      color: #444;
-      margin-bottom: 30px;
-      max-width: 420px;
-    }
-    .hero-desc strong {
-      font-weight: 700;
-      color: #1a1a2e;
-    }
-    .btn-outline {
-      display: inline-block;
-      padding: 13px 32px;
-      border: none;
-      color: #fff;
-      background: #1a4fad;
-      font-family: 'Roboto', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      border-radius: 50px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .btn-outline:hover { background: #093fff; }
-    .hero-right {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-left: 40px;
-    }
-    .hero-right img {
-      width: 100%;
-      max-width: 560px;
-      object-fit: contain;
-    }
-
-    /* STATS */
-    .stats-products {
-      background: #fff;
-      width: 100%;
-      padding: 48px 80px;
-    }
-    .stats {
-      display: flex;
-      gap: 0;
-      max-width: 1280px;
-      margin: 0 auto 48px auto;
-    
-      padding-bottom: 48px;
-    }
-    .stat-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      flex: 1;
-      padding: 0 32px;
-      border-right: 1px solid #e0e4ea;
-    }
-    .stat-item:first-child { padding-left: 0; }
-    .stat-item:last-child { padding-right: 0; border-right: none; }
-    .stat-icon {
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #1a4fad;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .stat-icon--gold { background: #c8922a; }
-    .stat-item p {
-      font-size: 13px;
-      line-height: 1.5;
-      color: #333;
-    }
-    .stat-item p strong {
-      font-weight: 700;
-      color: #1a1a2e;
-    }
-
-    /* PRODUCTS */
-    .products {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-    .products-title {
-      font-size: 28px;
-      font-weight: 900;
-      color: #1a1a2e;
-      margin-bottom: 24px;
-      letter-spacing: 0.3px;
-    }
-    .tabs {
-      display: flex;
-      gap: 8px;
-    }
-    .tab {
-      flex: 1;
-      padding: 20px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      background: #eef0f4;
-      border: none;
-      transition: background 0.2s;
-    }
-    .tab--active { background: #1a4fad; }
-    .tab-name {
-      font-size: 15px;
-      font-weight: 700 !important;
-      color: #1a1a2e;
-      margin-bottom: 4px;
-    }
-    .tab--active .tab-name { color: #fff; }
-    .tab-desc {
-      font-size: 12px;
-      color: #666;
-      font-weight: 400 !important;
-    }
-    .tab--active .tab-desc { color: rgba(255,255,255,0.85); font-weight: 400;}
-
-    /* TAB CONTENT */
-    .tab-content {
-      background: #f0f2f5;
-      padding: 48px 80px 0 80px;
-      width: 100%;
-    }
-    .project-block {
-      display: flex;
-      gap: 60px;
-      align-items: flex-start;
-      background: #fff;
-      border-radius: 12px 12px 0 0;
-      padding: 40px;
-    }
-    .project-left { flex: 1; }
-    .project-right { flex: 0 0 440px; }
-    .project-right img {
-      width: 100%;
-      height: 400px;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-    .project-title {
-      font-size: 30px;
-      font-weight: 700;
-      color: #1a1a2e;
-      margin-bottom: 20px;
-      text-align: left;
-    }
-    .project-text {
-      font-size: 16px;
-      line-height: 1.7;
-      color: #444;
-      margin-bottom: 12px;
-    }
-    .ai-label {
-      font-size: 16px;
-      font-weight: 700;
-      color: #1a1a2e;
-      margin: 20px 0 14px;
-    }
-    .ai-list { display: flex; flex-direction: column; gap: 16px; }
-    .ai-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-size: 16px;
-      color: #333;
-    }
-    .ai-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: #1a4fad;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    /* НАШЕ ПРЕДЛОЖЕНИЕ */
-.offer-section {
-  background: #f0f2f5;
-  padding: 0 80px 48px 80px;
-  width: 100%;
-}
-.offer-block {
-  background: #fff;
-  border-radius: 0 0 12px 12px ;
-  padding: 40px;
-  border-top: none;
-}
-.offer-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: #1a1a2e;
-  margin-bottom: 8px;
-}
-.offer-title .blue { color: #1a4fad; }
-.offer-subtitle {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 20px;
-}
-.section-label {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a1a2e;
-  margin: 20px 0 12px;
-}
-.offer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-bottom: 8px;
-}
-.offer-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: #333;
-  line-height: 1.5;
-}
-.offer-icon {
-  width: 40px; height: 40px;
-  border-radius: 8px;
-  background: #1a4fad;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.unique-block {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: #333;
-}
-.unique-icon {
-  width: 40px; height: 40px;
-  border-radius: 8px;
-  background: #c9952a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.unique-list {
-  list-style: none;
-  padding: 0;
-  line-height: 1.8;
-}
-.unique-list li::before { content: "• "; }
-.motiv-block {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: #333;
-}
-.motiv-icon {
-  width: 40px; height: 40px;
-  border-radius: 8px;
-  background: #1a1a2e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.advantages-list {
-  list-style: none;
-  padding: 0;
-  font-size: 14px;
-  color: #333;
-  line-height: 1.8;
-}
-.advantages-list li::before { content: "• "; }
-
-/* РАСЧЕТ СТОИМОСТИ */
-.cost-section {
-  background: #f0f2f5;
-  padding: 48px 80px;
-  width: 100%;
-}
-
-
-.cost-title {
-  font-size: 26px;
-  font-weight: 900;
-  color: #1a1a2e;
-  margin-bottom: 28px;
-  letter-spacing: 0.5px;
-}
-.cost-title .blue { color: #1a4fad; }
-
-/* 3 пункта */
-.cost-points {
-  display: flex;
-  gap: 0;
-  margin-bottom: 28px;
-}
-.cost-point {
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 0 24px;
-  font-size: 13px;
-  line-height: 1.6;
-  color: #333;
-}
-.cost-point:first-child { padding-left: 0; }
-.cost-point:last-child { border-right: none; padding-right: 0; }
-.cost-point-icon {
-  width: 44px; height: 44px;
-  border: 1.5px solid #b0b8c8;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.cost-point p strong { color: #1a1a2e; font-weight: 700; }
-
-.cost-divider {
-  border: none;
-  border-top: 1px solid #e0e4ea;
-  margin: 24px 0;
-}
-
-/* 4 шага */
-.cost-steps {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 8px;
-}
-.cost-step {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 12px;
-  font-size: 15px;
-  color: #333;
-  line-height: 1.5;
-}
-.cost-step strong { color: #1a1a2e; font-weight: 700; }
-.step-num {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: #1a4afd;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.step-arrow {
-  font-size: 28px;
-  color: #1a4fad;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 8px;
-}
-
-/* Подсказка */
-.cost-note {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: #333;
-}
-.cost-note strong { color: #1a1a2e; font-weight: 700; }
-
-/* ФУТЕР */
-.footer {
-  background: #0d1f3c;
-  width: 100%;
-  padding: 32px 80px;
-}
-.footer-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 48px;
-}
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex: 0 0 220px;
-}
-.footer-logo {
-  width: 90px !important;
-  height: 90px !important;
-  object-fit: contain;
-}
-.footer-brand p {
-  font-size: 12px;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.5;
-}
-.footer-col {
-  flex: 1;
-  font-size: 13px;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.6;
-}
-.footer-col-inner {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-.footer-col-inner svg { flex-shrink: 0; margin-top: 2px; }
-.footer-label {
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 4px;
-}
-.footer-socials {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-.social-btn {
-  width: 42px; height: 42px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.social-btn:hover { background: #fff; }
-.social-btn i {
-  font-size: 20px;
-  color: #0d1f3c;
-}
-
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- TOPBAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="topbar-access">
-      <svg width="28" height="14" viewBox="0 0 28 14" fill="none">
-        <circle cx="7" cy="7" r="6" stroke="#333" stroke-width="1.8"/>
-        <circle cx="21" cy="7" r="6" stroke="#333" stroke-width="1.8"/>
-        <line x1="13" y1="7" x2="15" y2="7" stroke="#333" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-      Версия для слабовидящих
-    </div>
+    <div class="topbar-access" onclick="toggleAccessibility()">
+  <svg width="28" height="14" viewBox="0 0 28 14" fill="none">
+    <circle cx="7" cy="7" r="6" stroke="#333" stroke-width="1.8"/>
+    <circle cx="21" cy="7" r="6" stroke="#333" stroke-width="1.8"/>
+    <line x1="13" y1="7" x2="15" y2="7" stroke="#333" stroke-width="1.8" stroke-linecap="round"/>
+  </svg>
+  Версия для слабовидящих
+</div>
+
     <div class="lang">
       <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
         <circle cx="7.5" cy="7.5" r="6.5" stroke="#1e3a7a" stroke-width="1.2"/>
@@ -563,71 +29,48 @@
         <line x1="2" y1="4.5" x2="13" y2="4.5" stroke="#1e3a7a" stroke-width="1"/>
         <line x1="2" y1="10.5" x2="13" y2="10.5" stroke="#1e3a7a" stroke-width="1"/>
       </svg>
-      <a href="#" class="active">RU</a>
-      <a href="#">KZ</a>
-      <a href="#">EN</a>
+      <a href="#" class="active" onclick="changeLang('ru')">RU</a>
+      <a href="#" onclick="changeLang('kz')">KZ</a>
+      <a href="#" onclick="changeLang('en')">EN</a>
     </div>
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <img class="hero-logo" src="logo.png" alt="ИТЦ УДП РК" />
     <h1 class="hero-title">ИТЦ УДП РК</h1>
-    <p class="hero-desc">
-      Ведущая компания на рынке информационно-коммуникационных услуг.
-      Наша <strong>миссия</strong>: создание экосистем госуправления для
-      формирования цифрового будущего.
-    </p>
-    <a href="#" class="btn-outline">О компании</a>
+    <p class="hero-desc">Ведущая компания на рынке информационно-коммуникационных услуг. Наша <strong>миссия</strong>: создание экосистем госуправления для формирования цифрового будущего.</p>
+    <a href="https://ito.qr-pib.kz/ru/" class="btn-outline">О компании</a>
   </div>
   <div class="hero-right">
-    <img src="hero-image.png" alt="ИТЦ УДП РК — цифровые решения" />
+    <img src="hero-image.png" alt="ИТЦ УДП РК" />
   </div>
 </section>
 
-<!-- STATS + PRODUCTS -->
 <section class="stats-products">
   <div class="stats">
     <div class="stat-item">
       <div class="stat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="3" stroke="white" stroke-width="1.5"/>
-          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M16.9 16.9l2.1 2.1M4.9 19.1l2.1-2.1M16.9 7.1l2.1-2.1" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="white" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M16.9 16.9l2.1 2.1M4.9 19.1l2.1-2.1M16.9 7.1l2.1-2.1" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
       <p>Более <strong>17 лет</strong> успешной работы на рынке IT и цифровых решений</p>
     </div>
     <div class="stat-item">
       <div class="stat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <circle cx="9" cy="8" r="3" stroke="white" stroke-width="1.5"/>
-          <circle cx="17" cy="8" r="2.5" stroke="white" stroke-width="1.5"/>
-          <path d="M3 19 C3 15 6 13 9 13 C12 13 15 15 15 19" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M17 13 C19.5 13 21 14.5 21 17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="white" stroke-width="1.5"/><circle cx="17" cy="8" r="2.5" stroke="white" stroke-width="1.5"/><path d="M3 19 C3 15 6 13 9 13 C12 13 15 15 15 19" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M17 13 C19.5 13 21 14.5 21 17" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
       <p>Сплоченная команда <strong>опытных специалистов</strong></p>
     </div>
     <div class="stat-item">
       <div class="stat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <rect x="7" y="7" width="10" height="10" rx="1.5" stroke="white" stroke-width="1.5"/>
-          <path d="M10 7V4M14 7V4M10 20V17M14 20V17M7 10H4M7 14H4M20 10H17M20 14H17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <rect x="9.5" y="9.5" width="5" height="5" rx="0.5" stroke="white" stroke-width="1.2"/>
-        </svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="7" y="7" width="10" height="10" rx="1.5" stroke="white" stroke-width="1.5"/><path d="M10 7V4M14 7V4M10 20V17M14 20V17M7 10H4M7 14H4M20 10H17M20 14H17" stroke="white" stroke-width="1.5" stroke-linecap="round"/><rect x="9.5" y="9.5" width="5" height="5" rx="0.5" stroke="white" stroke-width="1.2"/></svg>
       </div>
       <p>Разработка <strong>уникальных решений</strong>, не имеющих аналогов</p>
     </div>
     <div class="stat-item">
       <div class="stat-icon stat-icon--gold">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <path d="M3 21H21" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M5 21V10M9 21V10M15 21V10M19 21V10" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M3 10H21" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M12 3L21 10H3L12 3Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-        </svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 21H21" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M5 21V10M9 21V10M15 21V10M19 21V10" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M3 10H21" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M12 3L21 10H3L12 3Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
       </div>
       <p>Более <strong>1000 клиентов</strong>, включая ГО, МИО и квазигоссектор РК</p>
     </div>
@@ -636,23 +79,23 @@
   <div class="products">
     <h2 class="products-title">НАШИ ПРОДУКТЫ</h2>
     <div class="tabs">
-      <div class="tab tab--active">
+      <div class="tab tab--active" onclick="showTab('sak', this)">
         <div class="tab-name">САК</div>
         <div class="tab-desc">Ситуационно-аналитический комплекс</div>
       </div>
-      <div class="tab">
+      <div class="tab" onclick="showTab('epir', this)">
         <div class="tab-name">ЕПИР</div>
-        <div class="tab-desc">Единая платформа интернет-ресурсор</div>
+        <div class="tab-desc">Единая платформа интернет-ресурсов</div>
       </div>
-      <div class="tab">
+      <div class="tab" onclick="showTab('oss', this)">
         <div class="tab-name">ОСС</div>
         <div class="tab-desc">Обслуживание слаботочных систем</div>
       </div>
-      <div class="tab">
-        <div class="tab-name">Техническое со...</div>
-        <div class="tab-desc">Техническое сопровождение офф...</div>
+      <div class="tab" onclick="showTab('tech', this)">
+        <div class="tab-name">Техническое сопровождение</div>
+        <div class="tab-desc">Техническое сопровождение официальных мероприятий</div>
       </div>
-      <div class="tab">
+      <div class="tab" onclick="showTab('byuro', this)">
         <div class="tab-name">Бюро пропусков</div>
         <div class="tab-desc">Цифровая система допуска</div>
       </div>
@@ -660,226 +103,344 @@
   </div>
 </section>
 
-<!-- О ПРОЕКТЕ -->
-<div class="tab-content">
-  <div class="project-block">
-    <div class="project-left">
-      <h3 class="project-title">О проекте</h3>
-      <p class="project-text">
-        <strong>«Ситуационно-аналитический комплекс»</strong> (САК) – это платформа для
-        анализа и обработки данных, визуализирующая данные из различных
-        источников в режиме реального времени.
-      </p>
-      <p class="project-text">
-        Функционал САК позволяет собирать данные из разных источников,
-        хранить, анализировать большие массивы данных и представлять на
-        веб-экране в виде отчетов, содержащих графики и схемы.
-      </p>
-      <p class="project-text">
-        САК предназначен для анализа предметной области и вывода
-        основных ключевых показателей.
-      </p>
-      <p class="ai-label">ИИ-решения в САК:</p>
-      <div class="ai-list">
-        <div class="ai-item">
-          <div class="ai-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M6 14H5a3 3 0 0 1 0-6 5 5 0 0 1 9.9-1A3 3 0 0 1 19 10h-1" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
-              <rect x="7" y="12" width="10" height="2" rx="0.5" stroke="white" stroke-width="1.2"/>
-              <rect x="7" y="15" width="10" height="2" rx="0.5" stroke="white" stroke-width="1.2"/>
-              <circle cx="10" cy="20" r="1.5" stroke="white" stroke-width="1.2"/>
-              <path d="M10 18v-1M10 22v-1M8 20H7M13 20h-1M8.6 18.6l-.7-.7M12.1 21.4l-.7-.7M8.6 21.4l-.7.7M12.1 18.6l-.7.7" stroke="white" stroke-width="1" stroke-linecap="round"/>
-            </svg>
+<!-- САК -->
+<div id="content-sak">
+  <div class="tab-content">
+    <div class="project-block">
+      <div class="project-left">
+        <h3 class="project-title" id="sak-title-el">О проекте</h3>
+        <p class="project-text" id="sak-text1-el"><strong>«Ситуационно-аналитический комплекс»</strong> (САК) – это платформа для анализа и обработки данных, визуализирующая данные из различных источников в режиме реального времени.</p>
+        <p class="project-text" id="sak-text2-el">Функционал САК позволяет собирать данные из разных источников, хранить, анализировать большие массивы данных и представлять на веб-экране в виде отчетов, содержащих графики и схемы.</p>
+        <p class="project-text" id="sak-text3-el">САК предназначен для анализа предметной области и вывода основных ключевых показателей.</p>
+        <p class="ai-label" id="sak-ai-label-el">ИИ-решения в САК:</p>
+        <div class="ai-list">
+          <div class="ai-item">
+            <div class="ai-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 14H5a3 3 0 0 1 0-6 5 5 0 0 1 9.9-1A3 3 0 0 1 19 10h-1" stroke="white" stroke-width="1.4" stroke-linecap="round"/><rect x="7" y="12" width="10" height="2" rx="0.5" stroke="white" stroke-width="1.2"/><rect x="7" y="15" width="10" height="2" rx="0.5" stroke="white" stroke-width="1.2"/><circle cx="10" cy="20" r="1.5" stroke="white" stroke-width="1.2"/><path d="M10 18v-1M10 22v-1M8 20H7M13 20h-1M8.6 18.6l-.7-.7M12.1 21.4l-.7-.7M8.6 21.4l-.7.7M12.1 18.6l-.7.7" stroke="white" stroke-width="1" stroke-linecap="round"/></svg></div>
+            <span id="sak-ai-1">Выявление скрытых закономерностей</span>
           </div>
-          <span>Выявление скрытых закономерностей</span>
-        </div>
-        <div class="ai-item">
-          <div class="ai-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <line x1="4" y1="19" x2="20" y2="19" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
-              <line x1="4" y1="5" x2="4" y2="19" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
-              <rect x="6" y="12" width="3" height="7" rx="0.5" fill="white"/>
-              <rect x="11" y="8" width="3" height="11" rx="0.5" fill="white"/>
-              <rect x="16" y="5" width="3" height="6" rx="0.5" stroke="white" stroke-width="1.2" stroke-dasharray="2 1.5" fill="none"/>
-              <rect x="16" y="12" width="3" height="7" rx="0.5" stroke="white" stroke-width="1.2" stroke-dasharray="2 1.5" fill="none"/>
-            </svg>
+          <div class="ai-item">
+            <div class="ai-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><line x1="4" y1="19" x2="20" y2="19" stroke="white" stroke-width="1.4" stroke-linecap="round"/><line x1="4" y1="5" x2="4" y2="19" stroke="white" stroke-width="1.4" stroke-linecap="round"/><rect x="6" y="12" width="3" height="7" rx="0.5" fill="white"/><rect x="11" y="8" width="3" height="11" rx="0.5" fill="white"/><rect x="16" y="5" width="3" height="6" rx="0.5" stroke="white" stroke-width="1.2" stroke-dasharray="2 1.5" fill="none"/><rect x="16" y="12" width="3" height="7" rx="0.5" stroke="white" stroke-width="1.2" stroke-dasharray="2 1.5" fill="none"/></svg></div>
+            <span id="sak-ai-2">Прогнозирование по данным</span>
           </div>
-          <span>Прогнозирование по данным</span>
-        </div>
-        <div class="ai-item">
-          <div class="ai-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M4 17c2-1 4-2 7-1l4 1c1 .3 2-.3 2-1s-.8-1.5-2-1.5H12" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
-              <path d="M4 17l2 3h5l6-3" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="14" cy="7" r="2" stroke="white" stroke-width="1.3"/>
-              <path d="M14 4v1M14 10v1M11 7h1M17 7h1M11.9 5l.7.7M16.4 9.3l.7.7M11.9 9l.7-.7M16.4 4.7l.7-.7" stroke="white" stroke-width="1" stroke-linecap="round"/>
-            </svg>
+          <div class="ai-item">
+            <div class="ai-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 17c2-1 4-2 7-1l4 1c1 .3 2-.3 2-1s-.8-1.5-2-1.5H12" stroke="white" stroke-width="1.3" stroke-linecap="round"/><path d="M4 17l2 3h5l6-3" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="7" r="2" stroke="white" stroke-width="1.3"/><path d="M14 4v1M14 10v1M11 7h1M17 7h1M11.9 5l.7.7M16.4 9.3l.7.7M11.9 9l.7-.7M16.4 4.7l.7-.7" stroke="white" stroke-width="1" stroke-linecap="round"/></svg></div>
+            <span id="sak-ai-3">Формирование рекомендаций</span>
           </div>
-          <span>Формирование рекомендаций</span>
         </div>
       </div>
+      <div class="project-right"><img src="sak-image.jpg" alt="САК" /></div>
     </div>
-    <div class="project-right">
-      <img src="sak-image.jpg" alt="САК" />
+  </div>
+  <div class="offer-section">
+    <div class="offer-block">
+      <h3 class="offer-title" id="sak-offer-title">Наше <span class="blue">предложение</span></h3>
+      <p class="offer-subtitle" id="offer-soffer-subtitile">«Аналитическая платформа» объединяющая данные из разных систем для анализа в реальном времени</p>
+      <p class="section-label" id="sak-what">Что входит?</p>
+      <div class="offer-grid">
+        <div class="offer-item"><div class="offer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="white" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M6 8l3 3 3-3 3 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span id="sak-item1">Визуализация данных</span></div>
+        <div class="offer-item"><div class="offer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.5"/><path d="M6 9h12M6 13h8" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><span id="sak-item2">Интеграция с любыми информационными системами</span></div>
+        <div class="offer-item"><div class="offer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="white" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="white" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="white" stroke-width="1.5"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="white" stroke-width="1.5"/></svg></div><span id="sak-item3">Пакеты тарифов аналитических услуг с возможностью комбинирования дашбордов</span></div>
+        <div class="offer-item"><div class="offer-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="white" stroke-width="1.5"/><circle cx="17" cy="8" r="2.5" stroke="white" stroke-width="1.5"/><path d="M3 19C3 15 6 13 9 13s6 2 6 6" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M17 13c2.5 0 4 1.5 4 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><span id="sak-item4">Решение для комплексной аналитической поддержки</span></div>
+      </div>
+      <p class="section-label" id="sak-unique-label">Уникальность:</p>
+      <div class="unique-block">
+        <div class="unique-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <ul class="unique-list"><li id="sak-unique1">Максимальная адаптация под индивидуальные запросы</li><li id="sak-unique2">Использование технологий ИИ для аналитики и прогнозирования</li></ul>
+      </div>
+      <p class="section-label" id="sak-motiv-label">Мотивация к внедрению</p>
+      <div class="motiv-block">
+        <div class="motiv-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="white" stroke-width="1.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <p id="sak-motiv1">Необходимость оптимального решения для быстрого и точного внедрения аналитики</p>
+      </div>
+      <p class="section-label" id="sak-dev-label">Преимущества:</p>
+      <ul class="advantages-list">
+        <li id="sak-adv1">Интеграция с информационными системами «Единая кадровая система», ИАС «Smart Dala-Ukimet» и возможность охвата более 500 показателей по различным направлениям в 20 регионах страны</li>
+        <li id="sak-adv2">САК занял 1 место в конкурсе WSIS Prizes 2025</li>
+      </ul>
     </div>
   </div>
 </div>
 
-<!-- НАШЕ ПРЕДЛОЖЕНИЕ -->
-<div class="offer-section">
-  <div class="offer-block">
-    <h3 class="offer-title">Наше <span class="blue">предложение</span></h3>
-    <p class="offer-subtitle">«Аналитическая платформа» объединяющая данные из разных систем для анализа в реальном времени</p>
-
-    <p class="section-label">Что входит?</p>
-    <div class="offer-grid">
-      <div class="offer-item">
-        <div class="offer-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <rect x="2" y="3" width="20" height="14" rx="2" stroke="white" stroke-width="1.5"/>
-            <path d="M8 21h8M12 17v4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M6 8l3 3 3-3 3 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+<!-- ЕПИР -->
+<div id="content-epir" style="display:none;">
+  <div class="tab-content">
+    <div class="epir-full-block">
+      <div style="display:flex;gap:60px;align-items:flex-start;">
+        <div class="project-left">
+          <h3 class="project-title" id="epir-title">О проекте</h3>
+          <p class="project-text" id="epir-text1"><strong>Единая платформа интернет-ресурсов</strong> (ЕПИР) – цифровое решение позволяющее разместить интернет-ресурсы всех головных и подведомственных организаций на одной платформе, обеспечивающее единые требования к информационной безопасности, управлению информацией и визуальному оформлению в едином корпоративном стиле.</p>
+          <p class="ai-label" id="epir-plus-label">Плюсы:</p>
+          <ul class="epir-list">
+            <li id="epir-plus1">Оптимизация затрат на техническое сопровождение, хостинг и домен</li>
+            <li id="epir-plus2">Размещение информации через единое типовое окно администрирования</li>
+            <li id="epir-plus3">Предоставление технической поддержки и сопровождения на аппаратном и программном уровнях</li>
+          </ul>
         </div>
-        <span>Визуализация данных</span>
+        <div class="project-right">
+          <p class="ai-label" id="epir-grid-label">Возможно размещение интернет-ресурсов:</p>
+          <div class="epir-grid">
+            <div class="epir-grid-item"><div class="epir-grid-icon"><i class="bi bi-house-door" style="font-size:28px;color:#1a4fad;"></i></div><span id="epir-g1">Школы</span></div>
+            <div class="epir-grid-item"><div class="epir-grid-icon"><i class="bi bi-people" style="font-size:28px;color:#1a4fad;"></i></div><span id="epir-g2">Детские сады</span></div>
+            <div class="epir-grid-item"><div class="epir-grid-icon"><i class="bi bi-hospital" style="font-size:28px;color:#1a4fad;"></i></div><span id="epir-g3">Поликлиники</span></div>
+            <div class="epir-grid-item"><div class="epir-grid-icon"><i class="bi bi-heart-pulse" style="font-size:28px;color:#1a4fad;"></i></div><span id="epir-g4">Больницы</span></div>
+            <div class="epir-grid-item"><div class="epir-grid-icon"><i class="bi bi-mortarboard" style="font-size:28px;color:#1a4fad;"></i></div><span id="epir-g5">Учебные заведения</span></div>
+            <div class="epir-grid-item"><div class="epir-grid-icon"><i class="bi bi-buildings" style="font-size:28px;color:#1a4fad;"></i></div><span id="epir-g6">Коммунальные предприятия</span></div>
+            <div class="epir-grid-item"><div class="epir-grid-icon"><i class="bi bi-bus-front" style="font-size:28px;color:#1a4fad;"></i></div><span id="epir-g7">Транспортные организации</span></div>
+            <div class="epir-grid-item"><div class="epir-grid-icon"><i class="bi bi-grid" style="font-size:28px;color:#1a4fad;"></i></div><span id="epir-g8">Прочее</span></div>
+          </div>
+        </div>
       </div>
-      <div class="offer-item">
-        <div class="offer-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.5"/>
-            <path d="M6 9h12M6 13h8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+      <hr class="epir-divider" />
+      <div class="problems-inner">
+        <div class="problems-col">
+          <h3 class="problems-title" id="epir-prob-title">Текущие <span class="red">проблемы</span></h3>
+          <div class="problem-list">
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="epir-p1">Каждая организация <strong>самостоятельно закупает</strong> услуги по сопровождению интернет-ресурсов;</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="epir-p2">Во многих организациях <strong>не продлен хостинг</strong> и недоступен веб-сайт;</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="epir-p3">Интернет-ресурсы созданы <strong>на устаревших технологиях</strong>;</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="epir-p4"><strong>Отсутствует возможность</strong> гибкого управления содержимым и его размещение;</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="epir-p5">Устаревшие UI и UX, что <strong>влияет на посещаемость</strong> и интерес со стороны публики;</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="epir-p6"><strong>Нет ведения статистики</strong> посещаемости;</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="epir-p7"><strong>Затраты</strong> на <strong>разработку</strong> дизайна;</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="epir-p8"><strong>Отсутствует механизм мониторинга</strong> актуализации информации;</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="epir-p9"><strong>Разные бюджеты</strong> у всех организаций.</p></div>
+          </div>
         </div>
-        <span>Интеграция с любыми информационными системами</span>
+        <div class="solutions-col">
+          <h3 class="problems-title" id="epir-sol-title">Предлагаемые <span class="blue">решения</span></h3>
+          <div class="solution-list">
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="epir-s1"><strong>Сокращение расходов</strong> на содержание веб-сайтов подведомственных организаций;</p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="epir-s2"><strong>Централизованный хостинг</strong> на серверах ИТЦ с поддержкой 24/7;</p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="epir-s3"><strong>Единые стандарты</strong> администрирования веб-сайтов;</p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="epir-s4"><strong>Унифицированный дизайн,</strong> единый корпоративный стиль и оформление интернет ресурсов;</p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="epir-s5"><strong>Аналитика и мониторинг</strong> - вы всегда в курсе актуальности контента и посещаемости сайтов;</p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="epir-s6">Возможность подключения <strong>любых учреждений:</strong> школы, детские сады, поликлиники, колледжи, коммунальные и транспортные предприятия и т.д.;</p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="epir-s7"><strong>Прозрачность</strong> в закупках и платежах;</p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="epir-s8">Возможность выбора <strong>общего инфоповода</strong> для всех организаций.</p></div>
+          </div>
+        </div>
       </div>
-      <div class="offer-item">
-        <div class="offer-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <rect x="3" y="3" width="7" height="7" rx="1" stroke="white" stroke-width="1.5"/>
-            <rect x="14" y="3" width="7" height="7" rx="1" stroke="white" stroke-width="1.5"/>
-            <rect x="3" y="14" width="7" height="7" rx="1" stroke="white" stroke-width="1.5"/>
-            <rect x="14" y="14" width="7" height="7" rx="1" stroke="white" stroke-width="1.5"/>
-          </svg>
+      <hr class="epir-divider" />
+      <div class="epir-offer">
+        <h3 class="offer-title" id="epir-offer-title">Наше <span class="blue">предложение</span></h3>
+        <p class="offer-subtitle" id="epir-offer-sub">Централизованная веб-платформа, объединяющая интернет ресурсы в едином формате и стиле</p>
+        <p class="section-label" id="epir-what">Что входит?</p>
+        <div class="offer-grid">
+          <div class="offer-item"><div class="offer-icon"><i class="bi bi-display" style="font-size:18px;color:white;"></i></div><span id="epir-item1">CMS (Управление контентом)</span></div>
+          <div class="offer-item"><div class="offer-icon"><i class="bi bi-server" style="font-size:18px;color:white;"></i></div><span id="epir-item2">Хостинг</span></div>
+          <div class="offer-item"><div class="offer-icon"><i class="bi bi-headset" style="font-size:18px;color:white;"></i></div><span id="epir-item3">Техническая поддержка</span></div>
+          <div class="offer-item"><div class="offer-icon"><i class="bi bi-shield-check" style="font-size:18px;color:white;"></i></div><span id="epir-item4">Безопасность</span></div>
         </div>
-        <span>Пакеты тарифов аналитических услуг с возможностью комбинирования дашбордов</span>
-      </div>
-      <div class="offer-item">
-        <div class="offer-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <circle cx="9" cy="8" r="3" stroke="white" stroke-width="1.5"/>
-            <circle cx="17" cy="8" r="2.5" stroke="white" stroke-width="1.5"/>
-            <path d="M3 19C3 15 6 13 9 13s6 2 6 6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M17 13c2.5 0 4 1.5 4 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+        <p class="section-label" id="epir-unique-label">Уникальность:</p>
+        <div class="unique-block">
+          <div class="unique-icon"><i class="bi bi-layout-text-window" style="font-size:18px;color:white;"></i></div>
+          <ul class="unique-list">
+            <li id="epir-unique1">Централизованное и безопасное решение для интернет-ресурсов головных и подведомственных организаций <strong>в едином цифровом пространстве</strong></li>
+            <li id="epir-unique2">Обеспечение <strong>безопасности и визуальной целостности</strong></li>
+          </ul>
         </div>
-        <span>Решение для комплексной аналитической поддержки</span>
+        <p class="section-label" id="epir-motiv-label">Мотивация к внедрению</p>
+        <div class="motiv-block">
+          <div class="motiv-icon"><i class="bi bi-gear-wide-connected" style="font-size:18px;color:white;"></i></div>
+          <ul class="unique-list">
+            <li id="epir-motiv1">Необходимость в единой точке входа для всех пользователей</li>
+            <li id="epir-motiv2">Стремление к единым стандартам</li>
+            <li id="epir-motiv3">Приоритет единого подхода к стилю и структуре</li>
+          </ul>
+        </div>
+        <p class="section-label" id="epir-adv-label">Преимущества:</p>
+        <ul class="advantages-list">
+          <li id="epir-adv1">Полный административный контроль</li>
+          <li id="epir-adv2"><strong>100+</strong> сайтов на одной платформе</li>
+          <li id="epir-adv3">Доступность <strong>24/7</strong></li>
+          <li id="epir-adv4">Разработка любых дизайн-решений</li>
+        </ul>
       </div>
     </div>
-
-    <p class="section-label">Уникальность:</p>
-    <div class="unique-block">
-      <div class="unique-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <ul class="unique-list">
-        <li>Максимальная адаптация под индивидуальные запросы</li>
-        <li>Использование технологий ИИ для аналитики и прогнозирования</li>
-      </ul>
-    </div>
-
-    <p class="section-label">Мотивация к внедрению</p>
-    <div class="motiv-block">
-      <div class="motiv-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="9" stroke="white" stroke-width="1.5"/>
-          <circle cx="12" cy="12" r="3" stroke="white" stroke-width="1.5"/>
-          <path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <p>Необходимость оптимального решения для быстрого и точного внедрения аналитики</p>
-    </div>
-
-    <p class="section-label">Преимущества:</p>
-    <ul class="advantages-list">
-      <li>Интеграция с информационными системами «Единая кадровая система», ИАС «Smart Dala-Ukimet» и возможность охвата более 500 показателей по различным направлениям в 20 регионах страны</li>
-      <li>САК занял 1 место в конкурсе WSIS Prizes 2025</li>
-    </ul>
   </div>
-</div> 
+</div>
+
+<!-- ОСС -->
+<div id="content-oss" style="display:none;">
+  <div class="tab-content">
+    <div class="epir-full-block">
+      <h3 class="project-title" id="oss-title">Наши <span style="color:#1a4fad;">услуги</span> по монтажу:</h3>
+      <div class="oss-grid">
+        <div class="oss-item"><div class="oss-label" id="oss-l1">Монтаж абонентской сети специальной связи</div><img src="oss-1.jpg" alt="Монтаж абонентской сети" /><p class="oss-desc" id="oss-d1">Прокладка и подключение сетевых кабелей специальной закрытой связи</p></div>
+        <div class="oss-item"><div class="oss-label" id="oss-l2">Внутренние локальные сети, телефония</div><img src="oss-2.jpg" alt="Локальные сети" /><p class="oss-desc" id="oss-d2">Прокладка и соединение медных и оптоволоконных кабелей для высокоскоростной передачи данных и телефонии</p></div>
+        <div class="oss-item"><div class="oss-label" id="oss-l3">Цифровое телевидение</div><img src="oss-3.jpg" alt="Цифровое телевидение" /><p class="oss-desc" id="oss-d3">Подача сигнала кабельного и спутникового цифрового телевидения</p></div>
+        <div class="oss-item"><div class="oss-label" id="oss-l4">Предоставление ID карт для госорганов и бизнеса</div><img src="oss-4.jpg" alt="ID карты" /><p class="oss-desc" id="oss-d4">Выдача ID карт для системы контроля и управления доступом</p></div>
+        <div class="oss-item"><div class="oss-label" id="oss-l5">Системы контроля и управления доступом</div><img src="oss-5.jpg" alt="Системы доступа" /><p class="oss-desc" id="oss-d5">Установка оборудования для контроля входа и выхода, безопасность помещений</p></div>
+      </div>
+      <hr class="epir-divider" />
+      <div class="epir-offer">
+        <h3 class="offer-title" id="oss-offer-title">Наше <span class="blue">предложение</span></h3>
+        <p class="section-label" id="oss-what">Что входит?</p>
+        <div class="offer-grid">
+          <div class="offer-item"><div class="offer-icon"><i class="bi bi-router" style="font-size:18px;color:white;"></i></div><span id="oss-item1">Внутренние локальные сети, телефония</span></div>
+          <div class="offer-item"><div class="offer-icon"><i class="bi bi-tv" style="font-size:18px;color:white;"></i></div><span id="oss-item2">Цифровое телевидение</span></div>
+          <div class="offer-item"><div class="offer-icon"><i class="bi bi-credit-card" style="font-size:18px;color:white;"></i></div><span id="oss-item3">Предоставление ID карт для госорганов и бизнеса</span></div>
+          <div class="offer-item"><div class="offer-icon"><i class="bi bi-wifi" style="font-size:18px;color:white;"></i></div><span id="oss-item4">Монтаж абонентской сети специальной связи</span></div>
+          <div class="offer-item" style="grid-column: span 2;"><div class="offer-icon"><i class="bi bi-shield-lock" style="font-size:18px;color:white;"></i></div><span id="oss-item5">Оснащение режимных объектов и помещений системой контроля и управления доступом</span></div>
+        </div>
+        <p class="section-label" id="oss-unique-label">Уникальность:</p>
+        <div class="unique-block"><div class="unique-icon"><i class="bi bi-tools" style="font-size:18px;color:white;"></i></div><ul class="unique-list"><li id="oss-unique1">Инженерный контроль с многолетним опытом работы в помещениях ограниченного доступа и особо охраняемых объектах</li></ul></div>
+        <p class="section-label" id="oss-motiv-label">Мотивация к внедрению</p>
+        <div class="motiv-block"><div class="motiv-icon"><i class="bi bi-gear-wide-connected" style="font-size:18px;color:white;"></i></div><p id="oss-motiv1">Требования к качеству и надёжности выполнения работ</p></div>
+        <p class="section-label" id="oss-adv-label">Преимущества:</p>
+        <ul class="advantages-list">
+          <li id="oss-adv1">Подготовленная команда</li>
+          <li id="oss-adv2">Качество и надёжность</li>
+          <li id="oss-adv3">Комплексный подход</li>
+          <li id="oss-adv4">Поддержка <strong>24/7</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ТЕХНИЧЕСКОЕ СОПРОВОЖДЕНИЕ -->
+<!-- ТЕХНИЧЕСКОЕ СОПРОВОЖДЕНИЕ -->
+<div id="content-tech" style="display:none;">
+  <div class="tab-content">
+    <div class="epir-full-block">
+      <div style="display:flex; gap:40px; align-items:flex-start;">
+        <div style="flex:1;">
+          <h3 class="project-title" id="tech-title">Наш <span style="color:#1a4fad;">опыт:</span></h3>
+          <p class="project-text" id="tech-text1">Специалисты службы были задействованы при техническом сопровождении следующих <strong>крупных международных мероприятий:</strong></p>
+          <div style="display:inline-block; background:#1a4fad; color:white; padding:4px 14px; border-radius:4px; font-weight:700; font-size:13px; margin:16px 0 10px;">2024</div>
+          <ul class="advantages-list" id="tech-list-2024">
+            <li id="tech-e1">Саммит Шанхайской Организации Сотрудничества</li>
+            <li id="tech-e2">Всемирные Игры Кочевников</li>
+            <li id="tech-e3">Сессия Совета Коллективной Безопасности ОДКБ</li>
+            <li id="tech-e4">Встреча Глав Государств Центральной Азии</li>
+            <li id="tech-e5">Государственный визит Генерального секретаря ЦК Коммунистической партии Китая</li>
+            <li id="tech-e6">Государственный визит Президента России</li>
+            <li id="tech-e7">И т.д.</li>
+          </ul>
+          <div style="display:inline-block; background:#1a4fad; color:white; padding:4px 14px; border-radius:4px; font-weight:700; font-size:13px; margin:16px 0 10px;">2025</div>
+          <ul class="advantages-list">
+            <li id="tech-e8">34 Сессия Ассамблеи народа Казахстана</li>
+            <li id="tech-e9">Саммит «Центральная Азия - Италия»</li>
+            <li id="tech-e10">И т.д.</li>
+          </ul>
+        </div>
+        <div style="display:flex; gap:12px; flex:0 0 480px;">
+          <img src="tech-1.jpg" style="width:50%; height:480px; object-fit:cover; border-radius:10px;" />
+          <img src="tech-2.jpg" style="width:50%; height:480px; object-fit:cover; border-radius:10px;" />
+        </div>
+      </div>
+      <hr class="epir-divider" />
+      <div class="epir-offer">
+        <h3 class="offer-title" id="tech-offer-title">Наше <span class="blue">предложение</span></h3>
+        <p class="section-label" id="tech-what">Что входит?</p>
+        <div class="offer-grid">
+          <div class="offer-item">
+            <div class="offer-icon"><i class="bi bi-building" style="font-size:18px;color:white;"></i></div>
+            <div><span id="tech-item1">Конференц-залы на объектах:</span><br>
+            <span id="tech-item1-sub" style="color:#1a4fad; font-size:12px;">Президентский центр Республики Казахстан | Дворец Независимости</span></div>
+          </div>
+          <div class="offer-item"><div class="offer-icon"><i class="bi bi-display" style="font-size:18px;color:white;"></i></div><span id="tech-item2">Видеосистемы | Видеостены</span></div>
+          <div class="offer-item"><div class="offer-icon"><i class="bi bi-speaker" style="font-size:18px;color:white;"></i></div><span id="tech-item3">Конференц-системы | Звуковое и световое оборудование</span></div>
+          <div class="offer-item"><div class="offer-icon"><i class="bi bi-translate" style="font-size:18px;color:white;"></i></div><span id="tech-item4">Системы синхронного перевода</span></div>
+        </div>
+        <p class="section-label" id="tech-unique-label">Уникальность:</p>
+        <div class="unique-block">
+          <div class="unique-icon"><i class="bi bi-award" style="font-size:18px;color:white;"></i></div>
+          <p id="tech-unique1">Техническое сопровождение мероприятий на уровне межгосударственных взаимодействий с участием Глав Государств</p>
+        </div>
+        <p class="section-label" id="tech-adv-label">Преимущества:</p>
+        <ul class="advantages-list">
+          <li id="tech-adv1">Реализация проектов любой сложности</li>
+          <li id="tech-adv2">Уникальное оборудование (в единственном экземпляре в РК)</li>
+          <li id="tech-adv3">Премиальные акустические системы</li>
+          <li id="tech-adv4">Световое оборудование лучших мировых брендов</li>
+          <li id="tech-adv5">Обеспечение синхронного перевода на 32 языка (до 2000 человек)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- БЮРО ПРОПУСКОВ -->
+<div id="content-byuro" style="display:none;">
+  <div class="tab-content">
+    <div class="epir-full-block">
+      <div class="problems-inner">
+        <div class="problems-col">
+          <h3 class="problems-title" id="byuro-prob-title">Текущие <span class="red">проблемы</span></h3>
+          <div class="problem-list">
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="byuro-p1">Ручная <strong>подача заявок</strong> на пропуска (бумажные носители, устные согласования)</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="byuro-p2">Потеря или <strong>задержка данных</strong> по заявкам на допуск</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="byuro-p3">Отсутствие <strong>электронного журнала</strong> учета посещений</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="byuro-p4">Отсутствие <strong>оперативного контроля</strong> выходов и выходов посетителей на объекте</p></div>
+            <div class="problem-item"><div class="problem-icon"><i class="bi bi-x-lg"></i></div><p id="byuro-p5">Риск <strong>несанкционированного допуска</strong></p></div>
+          </div>
+        </div>
+        <div class="solutions-col">
+          <h3 class="problems-title" id="byuro-sol-title">Предлагаемые <span class="blue">решения</span></h3>
+          <div class="solution-list">
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="byuro-s1">Централизованный и автоматизированный процесс <strong>подачи и согласования заявок</strong></p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="byuro-s2"><strong>Прозрачный учёт</strong> и сохранение истории всех событий допуска</p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="byuro-s3">Исключение <strong>бумажного документооборота и человеческого фактора</strong></p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="byuro-s4">Возможность <strong>онлайн-мониторинга входов и выходов</strong> посетителей в режиме реального времени</p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="byuro-s5">Сокращение <strong>времени обработки заявок</strong> и снижение нагрузки на персонал</p></div>
+            <div class="solution-item"><div class="solution-icon"><i class="bi bi-check-lg"></i></div><p id="byuro-s6">Повышение <strong>уровня безопасности</strong> объектов</p></div>
+          </div>
+        </div>
+      </div>
+      <hr class="epir-divider" />
+      <div class="epir-offer">
+        <h3 class="offer-title" id="byuro-offer-title">Наше <span class="blue">предложение</span></h3>
+        <p class="section-label" id="byuro-what">Что входит?</p>
+        <div class="offer-grid" style="grid-template-columns: 1fr;">
+          <div class="offer-item">
+            <div class="offer-icon"><i class="bi bi-card-checklist" style="font-size:18px;color:white;"></i></div>
+            <span id="byuro-item1">Цифровая система допуска и идентификации, интегрированная с системой контроля и управления доступом</span>
+          </div>
+        </div>
+        <p class="section-label" id="byuro-unique-label">Уникальность:</p>
+        <div class="unique-block">
+          <div class="unique-icon"><i class="bi bi-shield-lock" style="font-size:18px;color:white;"></i></div>
+          <ul class="unique-list">
+            <li id="byuro-unique1">Опыт работы в режимных объектах</li>
+            <li id="byuro-unique2">Решение проектировалось с учётом требований безопасности объектов с ограниченным доступом</li>
+            <li id="byuro-unique3">Обработка более <strong>200 пропусков в день</strong></li>
+          </ul>
+        </div>
+        <p class="section-label" id="byuro-adv-label">Преимущества:</p>
+        <ul class="advantages-list">
+          <li id="byuro-adv1"><strong>Контроль в реальном времени</strong> позволяет отслеживать все факты входа и выхода сотрудников и посетителей</li>
+          <li id="byuro-adv2"><strong>Снижение бумажного документооборота</strong> — полная автоматизация допуска к объектам <strong>от подачи заявки до прохождения турникета</strong></li>
+          <li id="byuro-adv3">Время оформления пропуска <strong>меньше одной минуты</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- РАСЧЕТ СТОИМОСТИ -->
 <section class="cost-section">
   <div class="cost-block">
     <h2 class="cost-title">РАСЧЕТ <span class="blue">СТОИМОСТИ</span></h2>
-
-    <!-- 3 пункта сверху -->
     <div class="cost-points">
-      <div class="cost-point">
-        <div class="cost-point-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <rect x="4" y="3" width="14" height="18" rx="2" stroke="#1a4fad" stroke-width="1.5"/>
-            <path d="M8 8h8M8 12h8M8 16h5" stroke="#1a4fad" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <p>Каждая услуга <strong>оценивается</strong> исходя из объёма, сложности и сроков</p>
-      </div>
-      <div class="cost-point">
-        <div class="cost-point-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <rect x="3" y="4" width="18" height="16" rx="2" stroke="#1a4fad" stroke-width="1.5"/>
-            <path d="M3 9h18" stroke="#1a4fad" stroke-width="1.5"/>
-            <path d="M8 14h8M8 17h5" stroke="#1a4fad" stroke-width="1.5" stroke-linecap="round"/>
-            <rect x="7" y="2" width="2" height="4" rx="1" fill="#1a4fad"/>
-            <rect x="15" y="2" width="2" height="4" rx="1" fill="#1a4fad"/>
-          </svg>
-        </div>
-        <p>Окончательная <strong>смета и сроки выполнения</strong> — по результатам технического задания</p>
-      </div>
-      <div class="cost-point">
-        <div class="cost-point-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="9" stroke="#1a4fad" stroke-width="1.5"/>
-            <path d="M12 7v5l3 3" stroke="#1a4fad" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <p>Предоставляем детальный коммерческий расчёт в течение <strong>10 рабочих дней</strong></p>
-      </div>
+      <div class="cost-point"><div class="cost-point-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="14" height="18" rx="2" stroke="#1a4fad" stroke-width="1.5"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#1a4fad" stroke-width="1.5" stroke-linecap="round"/></svg></div><p>Каждая услуга <strong>оценивается</strong> исходя из объёма, сложности и сроков</p></div>
+      <div class="cost-point"><div class="cost-point-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#1a4fad" stroke-width="1.5"/><path d="M3 9h18" stroke="#1a4fad" stroke-width="1.5"/><path d="M8 14h8M8 17h5" stroke="#1a4fad" stroke-width="1.5" stroke-linecap="round"/><rect x="7" y="2" width="2" height="4" rx="1" fill="#1a4fad"/><rect x="15" y="2" width="2" height="4" rx="1" fill="#1a4fad"/></svg></div><p>Окончательная <strong>смета и сроки выполнения</strong> — по результатам технического задания</p></div>
+      <div class="cost-point"><div class="cost-point-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1a4fad" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="#1a4fad" stroke-width="1.5" stroke-linecap="round"/></svg></div><p>Предоставляем детальный коммерческий расчёт в течение <strong>10 рабочих дней</strong></p></div>
     </div>
-
     <hr class="cost-divider" />
-
-    <!-- 4 шага -->
     <div class="cost-steps">
-      <div class="cost-step">
-        <div class="step-num">1</div>
-        <p>Вы <strong>оставляете заявку</strong> или присылаете техзадание</p>
-      </div>
+      <div class="cost-step"><div class="step-num">1</div><p>Вы <strong>оставляете заявку</strong> или присылаете техзадание</p></div>
       <div class="step-arrow">›</div>
-      <div class="cost-step">
-        <div class="step-num">2</div>
-        <p>Мы уточняем требования и <strong>формируем КП</strong></p>
-      </div>
+      <div class="cost-step"><div class="step-num">2</div><p>Мы уточняем требования и <strong>формируем КП</strong></p></div>
       <div class="step-arrow">›</div>
-      <div class="cost-step">
-        <div class="step-num">3</div>
-        <p>Согласование <strong>бюджета</strong> и <strong>сроков</strong> выполнения</p>
-      </div>
+      <div class="cost-step"><div class="step-num">3</div><p>Согласование <strong>бюджета</strong> и <strong>сроков</strong> выполнения</p></div>
       <div class="step-arrow">›</div>
-      <div class="cost-step">
-        <div class="step-num" style="background: #000000;">4</div>
-        <p><strong>Начало работ</strong> после подписания договора</p>
-      </div>
+      <div class="cost-step"><div class="step-num" style="background:#000;">4</div><p><strong>Начало работ</strong> после подписания договора</p></div>
     </div>
-
-    <hr class="cost-divider" />
-
-    <!-- Подсказка снизу -->
     <div class="cost-note">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="9" stroke="#1a4fad" stroke-width="1.5"/>
-        <path d="M12 8v1M12 11v5" stroke="#1a4fad" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1a4fad" stroke-width="1.5"/><path d="M12 8v1M12 11v5" stroke="#1a4fad" stroke-width="1.8" stroke-linecap="round"/></svg>
       <p>Все расчёты <strong>прозрачны</strong> и гибко <strong>адаптируются</strong> под ваши задачи</p>
     </div>
   </div>
@@ -888,71 +449,39 @@
 <!-- ФУТЕР -->
 <footer class="footer">
   <div class="footer-inner">
-
-    <!-- Лого + копирайт -->
     <div class="footer-brand">
       <img src="logo.png" alt="ИТЦ УДП РК" class="footer-logo" />
       <p>2026 ©️ РГП на ПХВ «Инженерно-технический центр УДП РК»</p>
     </div>
-
-    <!-- Адрес -->
     <div class="footer-col">
       <div class="footer-col-inner">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="white" stroke-width="1.5"/>
-          <circle cx="12" cy="9" r="2.5" stroke="white" stroke-width="1.5"/>
-        </svg>
-        <div>
-          <p class="footer-label">Адрес</p>
-          <p>010000, г. Астана,<br/>пр-т Мангилик Ел, 8,<br/>подъезд 1В</p>
-        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="white" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="white" stroke-width="1.5"/></svg>
+        <div><p class="footer-label">Адрес</p><p>010000, г. Астана,<br/>пр-т Мангилик Ел, 8,<br/>подъезд 1В</p></div>
       </div>
     </div>
-
-    <!-- Телефон -->
     <div class="footer-col">
       <div class="footer-col-inner">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="white" stroke-width="1.5"/>
-        </svg>
-        <div>
-          <p class="footer-label">Контактные телефоны</p>
-          <p>+7 (7172) 74-00-22</p>
-        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="white" stroke-width="1.5"/></svg>
+        <div><p class="footer-label">Контактные телефоны</p><p>+7 (7172) 74-00-22</p></div>
       </div>
     </div>
-
-    <!-- Почта -->
     <div class="footer-col">
       <div class="footer-col-inner">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.5"/>
-          <path d="M2 7l10 7 10-7" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <div>
-          <p class="footer-label">Электронная почта</p>
-          <p>etc@etc.udp-rk.kz</p>
-        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.5"/><path d="M2 7l10 7 10-7" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div><p class="footer-label">Электронная почта</p><p>etc@etc.udp-rk.kz</p></div>
       </div>
     </div>
-
-    <!-- Соцсети -->
     <div class="footer-col">
       <p class="footer-label">Социальные сети:</p>
       <div class="footer-socials">
-  <a href="#" class="social-btn">
-    <i class="bi bi-instagram"></i>
-  </a>
-  <a href="#" class="social-btn">
-    <i class="bi bi-telegram"></i>
-  </a>
-  <a href="#" class="social-btn">
-    <i class="bi bi-whatsapp"></i>
-  </a>
-</div>
-
+        <a href="https://www.instagram.com/itc_udprk/" class="social-btn"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="social-btn"><i class="bi bi-telegram"></i></a>
+        <a href="#" class="social-btn"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
   </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
