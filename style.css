@@ -121,3 +121,40 @@
   font-weight: 700 !important;
   line-height: 1.8 !important;
 }
+@media (max-width: 768px) {
+  .hero { flex-direction: column; padding: 32px 20px; }
+  .hero-right { padding-left: 0; margin-top: 20px; }
+  .hero-title { font-size: 28px; }
+
+  .stats-products { padding: 32px 20px; }
+  .stats { flex-wrap: wrap; gap: 16px; }
+  .stat-item { flex: 0 0 calc(50% - 8px); padding: 0; border-right: none; border-bottom: 1px solid #e0e4ea; padding-bottom: 16px; }
+  .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
+
+  .tabs { flex-wrap: wrap; gap: 6px; }
+  .tab { flex: 0 0 calc(50% - 3px); }
+
+  .tab-content { padding: 20px 16px 0 16px; }
+  .project-block { flex-direction: column; padding: 20px; }
+  .project-right { flex: none; width: 100%; }
+  .project-right img { height: 220px; }
+
+  .offer-section { padding: 0 16px 32px 16px; }
+  .offer-grid { grid-template-columns: 1fr; }
+
+  .epir-full-block { padding: 20px; }
+  .problems-inner { flex-direction: column; gap: 24px; }
+
+  .oss-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .cost-section { padding: 32px 20px; }
+  .cost-points { flex-direction: column; gap: 16px; }
+  .cost-point { padding: 0; }
+  .cost-steps { flex-wrap: wrap; justify-content: center; gap: 16px; }
+  .cost-step { flex: 0 0 calc(50% - 8px); }
+  .step-arrow { display: none; }
+
+  .footer { padding: 24px 20px; }
+  .footer-inner { flex-direction: column; gap: 24px; }
+  .footer-brand { flex: none; }
+}
