@@ -122,39 +122,75 @@
   line-height: 1.8 !important;
 }
 @media (max-width: 768px) {
-  .hero { flex-direction: column; padding: 32px 20px; }
-  .hero-right { padding-left: 0; margin-top: 20px; }
+
+  /* Топбар */
+  .topbar { padding: 8px 16px; }
+
+  /* Герой */
+  .hero { flex-direction: column; padding: 24px 16px; min-height: auto; }
+  .hero-right { padding-left: 0; margin-top: 16px; width: 100%; }
+  .hero-right img { max-width: 100%; }
   .hero-title { font-size: 28px; }
+  .hero-desc { font-size: 13px; }
 
-  .stats-products { padding: 32px 20px; }
-  .stats { flex-wrap: wrap; gap: 16px; }
-  .stat-item { flex: 0 0 calc(50% - 8px); padding: 0; border-right: none; border-bottom: 1px solid #e0e4ea; padding-bottom: 16px; }
-  .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
+  /* Статистика */
+  .stats-products { padding: 24px 16px; }
+  .stats { flex-direction: column; gap: 16px; margin-bottom: 32px; }
+  .stat-item { padding: 0 0 16px 0; border-right: none; border-bottom: 1px solid #e0e4ea; }
+  .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
 
-  .tabs { flex-wrap: wrap; gap: 6px; }
-  .tab { flex: 0 0 calc(50% - 3px); }
+  /* Табтар */
+  .tabs { flex-direction: column; gap: 8px; }
+  .tab { flex: none; width: 100%; }
 
-  .tab-content { padding: 20px 16px 0 16px; }
-  .project-block { flex-direction: column; padding: 20px; }
+  /* САК блок */
+  .tab-content { padding: 16px 16px 0 16px; }
+  .project-block { flex-direction: column; padding: 20px; gap: 24px; }
   .project-right { flex: none; width: 100%; }
-  .project-right img { height: 220px; }
+  .project-right img { height: 200px; width: 100%; }
 
-  .offer-section { padding: 0 16px 32px 16px; }
+  /* Наше предложение */
+  .offer-section { padding: 0 16px 24px 16px; }
   .offer-grid { grid-template-columns: 1fr; }
 
+  /* ЕПИР блок */
   .epir-full-block { padding: 20px; }
   .problems-inner { flex-direction: column; gap: 24px; }
+  .epir-grid { grid-template-columns: repeat(2, 1fr); }
 
+  /* Стиль блок ішіндегі project-block */
+  .epir-full-block .project-block,
+  .epir-full-block > div[style*="flex"] {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  .epir-full-block .project-right { flex: none !important; width: 100% !important; }
+
+  /* ОСС */
   .oss-grid { grid-template-columns: repeat(2, 1fr); }
 
-  .cost-section { padding: 32px 20px; }
+  /* Тех сопровождение */
+  #content-tech .epir-full-block > div[style*="flex"] {
+    flex-direction: column !important;
+  }
+  #content-tech img[style*="height:480px"] {
+    width: 100% !important;
+    height: 200px !important;
+  }
+  #content-tech > div[style*="flex:0 0 480px"] {
+    flex: none !important;
+    width: 100% !important;
+  }
+
+  /* Расчет стоимости */
+  .cost-section { padding: 24px 16px; }
   .cost-points { flex-direction: column; gap: 16px; }
   .cost-point { padding: 0; }
-  .cost-steps { flex-wrap: wrap; justify-content: center; gap: 16px; }
-  .cost-step { flex: 0 0 calc(50% - 8px); }
-  .step-arrow { display: none; }
+  .cost-steps { flex-direction: column; align-items: center; gap: 8px; }
+  .step-arrow { transform: rotate(90deg); }
 
-  .footer { padding: 24px 20px; }
-  .footer-inner { flex-direction: column; gap: 24px; }
+  /* Футер */
+  .footer { padding: 24px 16px; }
+  .footer-inner { flex-direction: column; gap: 20px; }
   .footer-brand { flex: none; }
 }
