@@ -1,12 +1,8 @@
 function showTab(name, el) {
-  document.getElementById('content-sak').style.display = 'none';
-  document.getElementById('content-epir').style.display = 'none';
-  document.getElementById('content-oss').style.display = 'none';
-  document.getElementById('content-tech').style.display = 'none';
-  document.getElementById('content-byuro').style.display = 'none';
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab--active'));
-  document.getElementById('content-' + name).style.display = 'block';
-  el.classList.add('tab--active');
+ document.querySelectorAll('[idˆ="content-"]').forEach(tab => tab.style.display = 'none');
+ document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab--active'));
+ document.getElementById('content-' + name).style.display = 'block';
+ el.classList.add('tab--active');
 }
 
 function toggleAccessibility() {
