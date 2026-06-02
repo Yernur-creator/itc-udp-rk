@@ -14,7 +14,7 @@ body { font-family: 'Montserrat', sans-serif; background: #f0f2f5; overflow-x: h
 .hero-title { font-size: 42px; font-weight: 900; color: #1a1a2e; line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.3px; }
 .hero-desc { font-size: 13px; line-height: 1.7; color: #444; margin-bottom: 30px; max-width: 420px; }
 .hero-desc strong { font-weight: 700; color: #1a1a2e; }
-.btn-outline { display: inline-block; padding: 13px 32px; border: none; color: #fff; background: #1a4fad; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500; border-radius: 50px; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+.btn-outline { display: inline-block; padding: 13px 32px; border: none; color: #fff; background: #185CA4; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500; border-radius: 50px; cursor: pointer; text-decoration: none; transition: background 0.2s; }
 .btn-outline:hover { background: #093fff; }
 .hero-right { flex: 1; display: flex; justify-content: center; align-items: center; padding-left: 40px; overflow: hidden; }
 .hero-right img { width: 100%; max-width: 560px; object-fit: contain; }
@@ -23,7 +23,7 @@ body { font-family: 'Montserrat', sans-serif; background: #f0f2f5; overflow-x: h
 .stat-item { display: flex; align-items: flex-start; gap: 14px; flex: 1; padding: 0 32px; border-right: 1px solid #e0e4ea; min-width: 0; }
 .stat-item:first-child { padding-left: 0; }
 .stat-item:last-child { padding-right: 0; border-right: none; }
-.stat-icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; background: #1a4fad; display: flex; align-items: center; justify-content: center; }
+.stat-icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; background: #185CA4; display: flex; align-items: center; justify-content: center; }
 .stat-icon--gold { background: #c8922a; }
 .stat-item p { font-size: 13px; line-height: 1.5; color: #333; }
 .stat-item p strong { font-weight: 700; color: #1a1a2e; }
@@ -31,7 +31,7 @@ body { font-family: 'Montserrat', sans-serif; background: #f0f2f5; overflow-x: h
 .products-title { font-size: 28px; font-weight: 900; color: #1a1a2e; margin-bottom: 24px; letter-spacing: 0.3px; }
 .tabs { display: flex; gap: 8px; }
 .tab { flex: 1; padding: 20px 16px; border-radius: 6px; cursor: pointer; background: #eef0f4; border: none; transition: background 0.2s; min-width: 0; }
-.tab--active { background: #1a4fad; }
+.tab--active { background: #185CA4; }
 .tab-name { font-size: 15px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
 .tab--active .tab-name { color: #fff; }
 .tab-desc { font-size: 12px; color: #666; font-weight: 400; }
@@ -46,16 +46,16 @@ body { font-family: 'Montserrat', sans-serif; background: #f0f2f5; overflow-x: h
 .ai-label { font-size: 16px; font-weight: 700; color: #1a1a2e; margin: 20px 0 14px; }
 .ai-list { display: flex; flex-direction: column; gap: 16px; }
 .ai-item { display: flex; align-items: center; gap: 14px; font-size: 16px; color: #333; }
-.ai-icon { width: 44px; height: 44px; border-radius: 10px; background: #1a4fad; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ai-icon { width: 44px; height: 44px; border-radius: 10px; background: #185CA4; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .offer-section { background: #f0f2f5; padding: 0 80px 48px 80px; width: 100%; overflow: hidden; }
 .offer-block { background: #fff; border-radius: 0 0 12px 12px; padding: 40px; }
 .offer-title { font-size: 22px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; }
-.offer-title .blue { color: #1a4fad; }
+.offer-title .blue { color: #185CA4; }
 .offer-subtitle { font-size: 14px; color: #555; margin-bottom: 20px; }
 .section-label { font-size: 14px; font-weight: 700; color: #1a1a2e; margin: 20px 0 12px; }
 .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 8px; }
 .offer-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #333; line-height: 1.5; }
-.offer-icon { width: 40px; height: 40px; border-radius: 8px; background: #1a4fad; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.offer-icon { width: 40px; height: 40px; border-radius: 8px; background: #185CA4; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .unique-block { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #333; }
 .unique-icon { width: 40px; height: 40px; border-radius: 8px; background: #c9952a; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .unique-list { list-style: none; padding: 0; line-height: 1.8; }
@@ -65,7 +65,7 @@ body { font-family: 'Montserrat', sans-serif; background: #f0f2f5; overflow-x: h
 .advantages-list { list-style: none; padding: 0; font-size: 14px; color: #333; line-height: 1.8; }
 .advantages-list li::before { content: "• "; }
 .epir-list { list-style: none; padding: 0; font-size: 14px; color: #333; line-height: 1.8; }
-.epir-list li::before { content: "• "; color: #1a4fad; }
+.epir-list li::before { content: "• "; color: #185CA4; }
 .epir-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 12px; }
 .epir-grid-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; font-size: 12px; color: #333; }
 .epir-grid-icon { width: 56px; height: 56px; border: 1.5px solid #e0e4ea; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
@@ -75,21 +75,21 @@ body { font-family: 'Montserrat', sans-serif; background: #f0f2f5; overflow-x: h
 .problems-col, .solutions-col { flex: 1; min-width: 0; }
 .problems-title { font-size: 22px; font-weight: 700; color: #1a1a2e; margin-bottom: 24px; }
 .problems-title .red { color: #e53935; }
-.problems-title .blue { color: #1a4fad; }
+.problems-title .blue { color: #185CA4; }
 .problem-list, .solution-list { display: flex; flex-direction: column; gap: 14px; }
 .problem-item, .solution-item { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: #333; line-height: 1.5; }
 .problem-icon { width: 28px; height: 28px; border-radius: 6px; background: #e53935; color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; }
-.solution-icon { width: 28px; height: 28px; border-radius: 6px; background: #1a4fad; color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; }
+.solution-icon { width: 28px; height: 28px; border-radius: 6px; background: #185CA4; color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; }
 .epir-offer { padding-top: 8px; }
 .oss-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin: 24px 0; }
 .oss-item { display: flex; flex-direction: column; gap: 10px; }
-.oss-label { font-size: 13px; font-weight: 700; color: #1a1a2e; border-left: 3px solid #1a4fad; padding-left: 10px; line-height: 1.4; min-height: 48px; }
+.oss-label { font-size: 13px; font-weight: 700; color: #1a1a2e; border-left: 3px solid #185CA4; padding-left: 10px; line-height: 1.4; min-height: 48px; }
 .oss-item img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
 .oss-desc { font-size: 12px; color: #555; line-height: 1.5; min-height: 60px; }
 .cost-section { background: #f0f2f5; padding: 48px 80px; width: 100%; overflow: hidden; }
 .cost-block { background: #f0f2f5; padding: 36px 0; max-width: 1280px; margin: 0 auto; }
 .cost-title { font-size: 26px; font-weight: 900; color: #1a1a2e; margin-bottom: 28px; letter-spacing: 0.5px; }
-.cost-title .blue { color: #1a4fad; }
+.cost-title .blue { color: #185CA4; }
 .cost-points { display: flex; gap: 0; margin-bottom: 28px; }
 .cost-point { flex: 1; display: flex; align-items: flex-start; gap: 12px; padding: 0 24px; font-size: 15px; line-height: 1.6; color: #333; min-width: 0; }
 .cost-point:first-child { padding-left: 0; }
@@ -100,8 +100,8 @@ body { font-family: 'Montserrat', sans-serif; background: #f0f2f5; overflow-x: h
 .cost-steps { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
 .cost-step { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; font-size: 15px; color: #333; line-height: 1.5; min-width: 0; }
 .cost-step strong { color: #1a1a2e; font-weight: 700; }
-.step-num { width: 36px; height: 36px; border-radius: 50%; background: #1a4fad; color: #fff; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.step-arrow { font-size: 28px; color: #1a4fad; font-weight: 700; flex-shrink: 0; margin-top: 8px; }
+.step-num { width: 36px; height: 36px; border-radius: 50%; background: #185CA4; color: #fff; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-arrow { font-size: 28px; color: #185CA4; font-weight: 700; flex-shrink: 0; margin-top: 8px; }
 .cost-note { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #333; margin-top: 32px; padding-top: 32px; border-top: 1px solid #e0e4ea; }
 .cost-note strong { color: #1a1a2e; font-weight: 700; }
 .footer { background: #0d1f3c; width: 100%; padding: 32px 80px; overflow: hidden; }
@@ -206,12 +206,12 @@ body { font-family: 'Montserrat', sans-serif; background: #f0f2f5; overflow-x: h
 .tab-hidden { display: none; }
 
 /* Иконка өлшемдері */
-.icon-blue-lg { font-size: 28px; color: #1a4fad; }
+.icon-blue-lg { font-size: 28px; color: #185CA4; }
 .icon-white-md { font-size: 18px; color: white; }
 
 /* Синий текст */
-.text-blue { color: #1a4fad; }
-.text-blue-sm { color: #1a4fad; font-size: 12px; }
+.text-blue { color: #185CA4; }
+.text-blue-sm { color: #185CA4; font-size: 12px; }
 
 /* ЕПИР жоғарғы жол */
 .epir-top-row { display: flex; gap: 60px; align-items: flex-start; }
@@ -223,7 +223,7 @@ body { font-family: 'Montserrat', sans-serif; background: #f0f2f5; overflow-x: h
 .tech-photo { width: 50%; height: 480px; object-fit: cover; border-radius: 10px; }
 
 /* Жыл белгілері */
-.year-badge { display: inline-block; background: #1a4fad; color: white; padding: 4px 14px; border-radius: 4px; font-weight: 700; font-size: 13px; margin: 16px 0 10px; }
+.year-badge { display: inline-block; background: #185CA4; color: white; padding: 4px 14px; border-radius: 4px; font-weight: 700; font-size: 13px; margin: 16px 0 10px; }
 
 /* ОСС толық offer-item */
 .offer-item--full { grid-column: span 2; }

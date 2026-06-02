@@ -1,5 +1,5 @@
 function showTab(name, el) {
- document.querySelectorAll('[idˆ="content-"]').forEach(tab => tab.style.display = 'none');
+ document.querySelectorAll('[id^="content-"]').forEach(tab => tab.style.display = 'none');
  document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab--active'));
  document.getElementById('content-' + name).style.display = 'block';
  el.classList.add('tab--active');
@@ -42,12 +42,12 @@ const translations = {
     'epir-unique-label': 'Уникальность:', 'epir-unique1': 'Централизованное и безопасное решение <strong>в едином цифровом пространстве</strong>', 'epir-unique2': 'Обеспечение <strong>безопасности и визуальной целостности</strong>',
     'epir-motiv-label': 'Мотивация к внедрению', 'epir-motiv1': 'Необходимость в единой точке входа', 'epir-motiv2': 'Стремление к единым стандартам', 'epir-motiv3': 'Приоритет единого подхода к стилю и структуре',
     'epir-adv-label': 'Преимущества:', 'epir-adv1': 'Полный административный контроль', 'epir-adv2': '<strong>100+</strong> сайтов на одной платформе', 'epir-adv3': 'Доступность <strong>24/7</strong>', 'epir-adv4': 'Разработка любых дизайн-решений',
-    'oss-title': 'Наши <span style="color:#1a4fad;">услуги</span> по монтажу:', 'oss-l1': 'Монтаж абонентской сети специальной связи', 'oss-d1': 'Прокладка и подключение сетевых кабелей специальной закрытой связи', 'oss-l2': 'Внутренние локальные сети, телефония', 'oss-d2': 'Прокладка и соединение медных и оптоволоконных кабелей для высокоскоростной передачи данных и телефонии', 'oss-l3': 'Цифровое телевидение', 'oss-d3': 'Подача сигнала кабельного и спутникового цифрового телевидения', 'oss-l4': 'Предоставление ID карт для госорганов и бизнеса', 'oss-d4': 'Выдача ID карт для системы контроля и управления доступом', 'oss-l5': 'Системы контроля и управления доступом', 'oss-d5': 'Установка оборудования для контроля входа и выхода, безопасность помещений',
+    'oss-title': 'Наши <span style="color:#185CA4;">услуги</span> по монтажу:', 'oss-l1': 'Монтаж абонентской сети специальной связи', 'oss-d1': 'Прокладка и подключение сетевых кабелей специальной закрытой связи', 'oss-l2': 'Внутренние локальные сети, телефония', 'oss-d2': 'Прокладка и соединение медных и оптоволоконных кабелей для высокоскоростной передачи данных и телефонии', 'oss-l3': 'Цифровое телевидение', 'oss-d3': 'Подача сигнала кабельного и спутникового цифрового телевидения', 'oss-l4': 'Предоставление ID карт для госорганов и бизнеса', 'oss-d4': 'Выдача ID карт для системы контроля и управления доступом', 'oss-l5': 'Системы контроля и управления доступом', 'oss-d5': 'Установка оборудования для контроля входа и выхода, безопасность помещений',
     'oss-offer-title': 'Наше <span class="blue">предложение</span>', 'oss-what': 'Что входит?', 'oss-item1': 'Внутренние локальные сети, телефония', 'oss-item2': 'Цифровое телевидение', 'oss-item3': 'Предоставление ID карт для госорганов и бизнеса', 'oss-item4': 'Монтаж абонентской сети специальной связи', 'oss-item5': 'Оснащение режимных объектов и помещений системой контроля и управления доступом',
     'oss-unique-label': 'Уникальность:', 'oss-unique1': 'Инженерный контроль с многолетним опытом работы в помещениях ограниченного доступа и особо охраняемых объектах', 'oss-motiv-label': 'Мотивация к внедрению', 'oss-motiv1': 'Требования к качеству и надёжности выполнения работ',
     'oss-adv-label': 'Преимущества:', 'oss-adv1': 'Подготовленная команда', 'oss-adv2': 'Качество и надёжность', 'oss-adv3': 'Комплексный подход', 'oss-adv4': 'Поддержка <strong>24/7</strong>',
     // Техническое сопровождение
-    'tech-title': 'Наш <span style="color:#1a4fad;">опыт:</span>',
+    'tech-title': 'Наш <span style="color:#185CA4;">опыт:</span>',
     'tech-text1': 'Специалисты службы были задействованы при техническом сопровождении следующих <strong>крупных международных мероприятий:</strong>',
     'tech-e1': 'Саммит Шанхайской Организации Сотрудничества', 'tech-e2': 'Всемирные Игры Кочевников', 'tech-e3': 'Сессия Совета Коллективной Безопасности ОДКБ', 'tech-e4': 'Встреча Глав Государств Центральной Азии', 'tech-e5': 'Государственный визит Генерального секретаря ЦК Коммунистической партии Китая', 'tech-e6': 'Государственный визит Президента России', 'tech-e7': 'И т.д.',
     'tech-e8': '34 Сессия Ассамблеи народа Казахстана', 'tech-e9': 'Саммит «Центральная Азия - Италия»', 'tech-e10': 'И т.д.',
@@ -94,12 +94,12 @@ const translations = {
     'epir-unique-label': 'Бірегейлік:', 'epir-unique1': 'Басты және бағынышты ұйымдардың интернет-ресурстарына арналған <strong>бірыңғай цифрлық кеңістіктегі</strong> орталықтандырылған шешім', 'epir-unique2': '<strong>Қауіпсіздік пен визуалдық тұтастықты</strong> қамтамасыз ету',
     'epir-motiv-label': 'Енгізуге ынталандыру', 'epir-motiv1': 'Барлық пайдаланушылар үшін бірыңғай кіру нүктесі қажеттілігі', 'epir-motiv2': 'Бірыңғай стандарттарға ұмтылу', 'epir-motiv3': 'Стиль мен құрылымға бірыңғай тәсілді басымдыққа алу',
     'epir-adv-label': 'Артықшылықтары:', 'epir-adv1': 'Толық әкімшілік бақылау', 'epir-adv2': 'Бір платформада <strong>100+</strong> сайт', 'epir-adv3': '<strong>24/7</strong> қолжетімділік', 'epir-adv4': 'Кез келген дизайн шешімдерін әзірлеу',
-    'oss-title': 'Монтаж бойынша <span style="color:#1a4fad;">қызметтеріміз:</span>', 'oss-l1': 'Арнайы байланыстың абоненттік желісін монтаждау', 'oss-d1': 'Арнайы жабық байланыстың желілік кабельдерін тарту және қосу', 'oss-l2': 'Ішкі жергілікті желілер, телефония', 'oss-d2': 'Жоғары жылдамдықты деректер беру және телефония үшін мыс және талшықты-оптикалық кабельдерді тарту', 'oss-l3': 'Цифрлық телевидение', 'oss-d3': 'Кабельдік және жерсеріктік цифрлық телевидение сигналын беру', 'oss-l4': 'Мемлекеттік органдар мен бизнеске ID карталарын беру', 'oss-d4': 'Кіруді бақылау және басқару жүйесіне арналған ID карталарын беру', 'oss-l5': 'Кіруді бақылау және басқару жүйелері', 'oss-d5': 'Кіру-шығуды бақылауға арналған жабдықтарды орнату',
+    'oss-title': 'Монтаж бойынша <span style="color:#185CA4;">қызметтеріміз:</span>', 'oss-l1': 'Арнайы байланыстың абоненттік желісін монтаждау', 'oss-d1': 'Арнайы жабық байланыстың желілік кабельдерін тарту және қосу', 'oss-l2': 'Ішкі жергілікті желілер, телефония', 'oss-d2': 'Жоғары жылдамдықты деректер беру және телефония үшін мыс және талшықты-оптикалық кабельдерді тарту', 'oss-l3': 'Цифрлық телевидение', 'oss-d3': 'Кабельдік және жерсеріктік цифрлық телевидение сигналын беру', 'oss-l4': 'Мемлекеттік органдар мен бизнеске ID карталарын беру', 'oss-d4': 'Кіруді бақылау және басқару жүйесіне арналған ID карталарын беру', 'oss-l5': 'Кіруді бақылау және басқару жүйелері', 'oss-d5': 'Кіру-шығуды бақылауға арналған жабдықтарды орнату',
     'oss-offer-title': 'Біздің <span class="blue">ұсынысымыз</span>', 'oss-what': 'Не кіреді?', 'oss-item1': 'Ішкі жергілікті желілер, телефония', 'oss-item2': 'Цифрлық телевидение', 'oss-item3': 'Мемлекеттік органдар мен бизнеске ID карталарын беру', 'oss-item4': 'Арнайы байланыстың абоненттік желісін монтаждау', 'oss-item5': 'Режимдік объектілер мен үй-жайларды кіруді бақылау жүйесімен жарақтандыру',
     'oss-unique-label': 'Бірегейлік:', 'oss-unique1': 'Шектеулі қолжетімді үй-жайларда жұмыс істеудің көпжылдық тәжірибесі бар инженерлік бақылау', 'oss-motiv-label': 'Енгізуге ынталандыру', 'oss-motiv1': 'Жұмыстарды орындаудың сапасы мен сенімділігіне қойылатын талаптар',
     'oss-adv-label': 'Артықшылықтары:', 'oss-adv1': 'Дайындалған команда', 'oss-adv2': 'Сапа мен сенімділік', 'oss-adv3': 'Кешенді тәсіл', 'oss-adv4': '<strong>24/7</strong> қолдау',
     // Техникалық қамтамасыз ету
-    'tech-title': 'Біздің <span style="color:#1a4fad;">тәжірибеміз:</span>',
+    'tech-title': 'Біздің <span style="color:#185CA4;">тәжірибеміз:</span>',
     'tech-text1': 'Қызмет мамандары мына <strong>ірі халықаралық іс-шараларды</strong> техникалық қамтамасыз ету барысында қатысты:',
     'tech-e1': 'Шанхай Ынтымақтастық Ұйымының саммиті', 'tech-e2': 'Дүниежүзілік Көшпенділер ойындары', 'tech-e3': 'ҰҚҰК Ұжымдық Қауіпсіздік Кеңесінің сессиясы', 'tech-e4': 'Орталық Азия мемлекет басшыларының кездесуі', 'tech-e5': 'Қытай Коммунистік партиясы ОК Бас хатшысының мемлекеттік сапары', 'tech-e6': 'Ресей Президентінің мемлекеттік сапары', 'tech-e7': 'Және т.б.',
     'tech-e8': 'Қазақстан халқы Ассамблеясының 34-сессиясы', 'tech-e9': '«Орталық Азия - Италия» саммиті', 'tech-e10': 'Және т.б.',
@@ -146,12 +146,12 @@ const translations = {
     'epir-unique-label': 'Uniqueness:', 'epir-unique1': 'Centralized and secure solution <strong>in a unified digital space</strong>', 'epir-unique2': 'Ensuring <strong>security and visual integrity</strong>',
     'epir-motiv-label': 'Motivation for implementation', 'epir-motiv1': 'Need for a unified entry point', 'epir-motiv2': 'Striving for unified standards', 'epir-motiv3': 'Priority of unified approach to style',
     'epir-adv-label': 'Advantages:', 'epir-adv1': 'Full administrative control', 'epir-adv2': '<strong>100+</strong> websites on one platform', 'epir-adv3': 'Availability <strong>24/7</strong>', 'epir-adv4': 'Development of any design solutions',
-    'oss-title': 'Our <span style="color:#1a4fad;">installation services:</span>', 'oss-l1': 'Installation of special communication subscriber network', 'oss-d1': 'Laying and connecting network cables of special closed communication', 'oss-l2': 'Internal local networks, telephony', 'oss-d2': 'Laying copper and fiber optic cables for high-speed data transmission', 'oss-l3': 'Digital television', 'oss-d3': 'Providing cable and satellite digital television signal', 'oss-l4': 'Providing ID cards for government and business', 'oss-d4': 'Issuing ID cards for access control systems', 'oss-l5': 'Access control and management systems', 'oss-d5': 'Installing equipment for entry and exit control',
+    'oss-title': 'Our <span style="color:#185CA4;">installation services:</span>', 'oss-l1': 'Installation of special communication subscriber network', 'oss-d1': 'Laying and connecting network cables of special closed communication', 'oss-l2': 'Internal local networks, telephony', 'oss-d2': 'Laying copper and fiber optic cables for high-speed data transmission', 'oss-l3': 'Digital television', 'oss-d3': 'Providing cable and satellite digital television signal', 'oss-l4': 'Providing ID cards for government and business', 'oss-d4': 'Issuing ID cards for access control systems', 'oss-l5': 'Access control and management systems', 'oss-d5': 'Installing equipment for entry and exit control',
     'oss-offer-title': 'Our <span class="blue">proposal</span>', 'oss-what': 'What is included?', 'oss-item1': 'Internal local networks, telephony', 'oss-item2': 'Digital television', 'oss-item3': 'Providing ID cards for government and business', 'oss-item4': 'Installation of special communication subscriber network', 'oss-item5': 'Equipping restricted facilities with access control systems',
     'oss-unique-label': 'Uniqueness:', 'oss-unique1': 'Engineering control with years of experience in restricted access premises', 'oss-motiv-label': 'Motivation for implementation', 'oss-motiv1': 'Requirements for quality and reliability of work',
     'oss-adv-label': 'Advantages:', 'oss-adv1': 'Prepared team', 'oss-adv2': 'Quality and reliability', 'oss-adv3': 'Comprehensive approach', 'oss-adv4': 'Support <strong>24/7</strong>',
     // Technical Support
-    'tech-title': 'Our <span style="color:#1a4fad;">experience:</span>',
+    'tech-title': 'Our <span style="color:#185CA4;">experience:</span>',
     'tech-text1': 'Service specialists provided technical support for the following <strong>major international events:</strong>',
     'tech-e1': 'Shanghai Cooperation Organisation Summit', 'tech-e2': 'World Nomad Games', 'tech-e3': 'CSTO Collective Security Council Session', 'tech-e4': 'Meeting of Central Asian Heads of State', 'tech-e5': 'State visit of the General Secretary of the CPC Central Committee', 'tech-e6': 'State visit of the President of Russia', 'tech-e7': 'And others.',
     'tech-e8': '34th Session of the Assembly of People of Kazakhstan', 'tech-e9': '"Central Asia - Italy" Summit', 'tech-e10': 'And others.',
@@ -179,7 +179,8 @@ const translations = {
 function changeLang(lang) {
   try {
     document.querySelectorAll('.lang a').forEach(a => a.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+    const activeLink = document.querySelector(`.lang a[onclick*="'${lang}'"]`);
+if (activeLink) activeLink.classList.add('active');
     const t = translations[lang];
     const g = (id) => document.getElementById(id);
 
@@ -217,4 +218,6 @@ function changeLang(lang) {
     try { document.querySelector('.footer-brand p').innerHTML = t['footer-copy']; } catch(e) {}
     try { const fc = document.querySelectorAll('.footer-col'); if(fc[0]){const p=fc[0].querySelector('p:last-child'); if(p)p.innerHTML=t['footer-address'];} } catch(e) {}
   } catch(e) { console.log('Lang error:', e); }
+
 }
+document.addEventListener('DOMContentLoaded',function() { changeLang('ru'); });
