@@ -184,7 +184,7 @@ if (activeLink) activeLink.classList.add('active');
     const t = translations[lang];
     const g = (id) => document.getElementById(id);
 
-    try { document.querySelector('.topbar-access').innerHTML = `<svg width="28" height="14" viewBox="0 0 28 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#333" stroke-width="1.8"/><circle cx="21" cy="7" r="6" stroke="#333" stroke-width="1.8"/><line x1="13" y1="7" x2="15" y2="7" stroke="#333" stroke-width="1.8" stroke-linecap="round"/></svg> ${t['access-btn']}`; } catch(e) {}
+    try { document.querySelector('.topbar-access').innerHTML = `<img src="icons/ochki.png" width="22" height="10" alt="" /> ${t['access-btn']}`; } catch(e) {}
     try { document.querySelector('.hero-title').textContent = t['hero-title']; } catch(e) {}
     try { document.querySelector('.hero-desc').innerHTML = t['hero-desc']; } catch(e) {}
     try { document.querySelector('.btn-outline').textContent = t['hero-btn']; } catch(e) {}
